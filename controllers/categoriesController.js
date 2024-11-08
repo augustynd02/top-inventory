@@ -1,7 +1,7 @@
 const categoriesController = {
     getCategories: (req, res) => {
-        res.render('categories');
+        res.render('pages/categories');
     }
 }
 
-modules.export = categoriesController;
+module.exports = categoriesController;
