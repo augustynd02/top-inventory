@@ -1,6 +1,6 @@
 const indexController = {
     getIndex: (req, res) => {
-        res.render('pages/index');
+        res.render('pages/home');
     }
 }
 
