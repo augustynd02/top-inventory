@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Grocerio</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <%- include('../partials/navbar') %>
 
-    <h1>Home</h1>
+
+    <main>
+        <div class="header">
+            <h1>The best tool to manage your products. </br> Start your journey today.</h1>
+            <p>Easy. Quick. Handy. What else would you want? Go ahead and start your inventory! </p>
+        </div>
+        <div class="choices">
+            <a href="/categories">View categories</a>
+            <a href="/categories">View products</a>
+        </div>
+    </main>
 
     <%- include('../partials/footer') %>
 </body>
