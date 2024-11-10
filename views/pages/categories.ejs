@@ -11,6 +11,9 @@
 
     <main>
         <h1>Categories</h1>
+        <% categories.forEach(function(category) { %>
+            <p><%= JSON.stringify(category) %></p>
+        <% }); %>
     </main>
 
     <%- include('../partials/footer') %>
