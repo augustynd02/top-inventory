@@ -11,6 +11,9 @@
 
     <main>
         <h1>Products</h1>
+        <% products.forEach(function(product) { %>
+            <p><%= JSON.stringify(product) %></p>
+        <% }); %>
     </main>
 
     <%- include('../partials/footer') %>
