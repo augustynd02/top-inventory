@@ -17,4 +17,13 @@ app.use('/categories', categoriesRouter);
 
 app.get('/', (req, res) => res.send('works'));
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(err.status || 500);
+    res.render('pages/error', {
+        status: err.status || 500,
+        message: err.message
+    })
+  });
+
 app.listen(PORT, () => console.log('Listening on port ' + PORT))
