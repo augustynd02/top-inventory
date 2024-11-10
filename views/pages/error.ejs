@@ -11,9 +11,10 @@
 
     <main>
         <h1>Error: <%= status %></h1>
-        <p>The serves has encountered an error: <%= message %></p>
+        <p>The serves has encountered an error:</p>
+        <p><%= message %></p>
     </main>
 
-    <%- include('../partials/footer') %>
+    <%- include('../partials/footer', { error: true }) %>
 </body>
 </html>

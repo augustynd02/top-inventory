@@ -5,6 +5,7 @@
 :root {
     --primary: #9addaf;
     --secondary: #35605A;
+    --error: #5f1525;
 }
 
 html {
@@ -131,6 +132,11 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+footer.error {
+    background-color: var(--error);
+}
+
 .username {
     color: var(--secondary);
     font-weight: bold;
