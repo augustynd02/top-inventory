@@ -33,13 +33,17 @@ html {
 }
 
 body {
+    position: relative;
     margin: 0px;
     min-height: 100vh;
     font-family: arial;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
+.wrapper.hide main .table {
+    visibility: hidden;
 }
 
 .wrapper {
@@ -48,6 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 nav {
@@ -80,7 +85,6 @@ main {
     align-items: center;
     gap: 2rem;
     width: 80%;
-
     text-align: center;
 }
 
@@ -148,6 +152,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 0;
 }
 
 footer.error {
@@ -257,4 +262,57 @@ button:has(span) {
     color: white;
     font-size: 2rem;
     vertical-align: middle;
+}
+
+
+.popup-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    min-width: 40%;
+    padding: 2rem;
+    background-color: white;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.popup-header h2 {
+    margin: 0 0 2rem;
+    text-align: center;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content form input {
+    margin-bottom: 0.5rem;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    border-left: 2px solid var(--primary);
+    padding: 0.5rem;
+}
+
+.popup-content .buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popup-content form button[type="submit"] {
+    width: fit-content;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.popup-content form button[type="submit"]:hover {
+    box-shadow: 0px 8px 8px rgb(235, 235, 235);
 }

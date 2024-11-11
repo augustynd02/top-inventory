@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="addProductPopup.js" defer></script>
   </head>
 
   <body>
@@ -37,7 +38,7 @@
             <% }); %>
           </div>
           <div class="table-footer">
-            <button class="add" id="add-product"><span class="material-icons">add</span></button>
+            <button class="add" id="add-product" onClick="addProductPopup(this)"><span class="material-icons">add</span></button>
           </div>
         </div>
       </main>
