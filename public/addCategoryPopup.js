@@ -14,7 +14,7 @@ function addCategoryPopup() {
         <div class="popup-content">
             <form action="categories/add" method="POST">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name">
+                <input type="text" name="name" id="name" required>
                 <label for="description">Description</label>
                 <input type="text" name="description" id="description">
 
