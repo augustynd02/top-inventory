@@ -159,7 +159,7 @@ footer.error {
 
 .product {
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 0rem 1rem;
 
     border-left: 4px dashed var(--primary);
     /* border-bottom: 4px solid var(--primary); */
@@ -178,9 +178,28 @@ span.name {
 
 .down {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 span.description {
     margin-right: auto;
+}
+
+button:has(span) {
+    border: none;
+    background-color: inherit;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.edit {
+    vertical-align: middle;
+    color: var(--primary);
+    margin-left: 1rem;
+}
+
+.delete {
+    vertical-align: middle;
+    color: #F44336;
 }
