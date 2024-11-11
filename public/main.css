@@ -161,7 +161,7 @@ footer.error {
     gap: 1rem;
 }
 
-.product {
+.product, .category {
     text-align: left;
     padding: 0.5rem 1rem 0.5rem;
 
@@ -191,7 +191,7 @@ span.name {
     transition: 0.2s ease;
 }
 
-.product:hover > .down {
+.product:hover > .down, .category:hover > .down {
     height: auto;
 }
 
