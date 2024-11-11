@@ -1,4 +1,4 @@
-function addProductPopup(element) {
+function addProductPopup() {
     const body = document.querySelector('body');
     const wrapper = document.querySelector('.wrapper');
     wrapper.classList.add('hide');
