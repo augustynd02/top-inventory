@@ -22,8 +22,17 @@ async function getAllProducts() {
 
 async function addProduct({ name, description, quantity, price }) {
     try {
-        const q = "INSERT INTO products (name, description, quantity, price, category_id) VALUES ($1, $2, $3, $4, 1)";
+        const q = "INSERT INTO products (name, description, quantity, price, category_id) VALUES ($1, $2, $3, $4, 1);";
         await pool.query(q, [name, description, quantity, price]);
+    } catch (err) {
+        next(err);
+    }
+}
+
+async function addCategory({ name, description }) {
+    try {
+        const q = "INSERT INTO categories (name, description) VALUES ($1, $2);";
+        await pool.query(q, [name, description]);
     } catch (err) {
         next(err);
     }
@@ -32,5 +41,6 @@ async function addProduct({ name, description, quantity, price }) {
 module.exports = {
     getAllCategories,
     getAllProducts,
-    addProduct
+    addProduct,
+    addCategory
 }
