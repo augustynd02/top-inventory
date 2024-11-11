@@ -6,7 +6,7 @@ const productsController = {
         res.render('pages/products', { products: products });
     },
     addProduct: async (req, res) => {
-        db.addProduct(req.body)
+        await db.addProduct(req.body)
         res.redirect('/products');
     }
 }
