@@ -18,8 +18,10 @@ app.use('/categories', categoriesRouter);
 
 app.get('/', (req, res) => res.send('works'));
 
-app.get('/errortest', (req, res, next) => {
-  const error = new Error("Test error");
+app.use((req, res, next) => {
+  res.status(404);
+  const error = new Error("Not found");
+  error.status = 404;
   next(error)
 })
 
@@ -31,5 +33,6 @@ app.use((err, req, res, next) => {
         message: err.message
     })
   });
+
 
 app.listen(PORT, () => console.log('Listening on port ' + PORT))
