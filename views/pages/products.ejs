@@ -27,7 +27,7 @@
             <% products.forEach(function(product) { %>
             <div class="product">
               <div class="top">
-                <span class="name"> <%= product.name %> </span>
+                <span class="name"> <%= product.name %> <span class="small-category"> | <%= product.category_name %> </span></span>
                 <span class="quantity"> <%= product.quantity %>x </span>
                 <span class="price"> <%= product.price %>$ </span>
               </div>

@@ -294,7 +294,7 @@ button:has(span) {
     flex-direction: column;
 }
 
-.popup-content form input {
+.popup-content form input, select {
     margin-bottom: 0.5rem;
     background-color: rgb(245, 245, 245);
     border: none;
@@ -342,4 +342,9 @@ input:read-only {
     font-weight: bold;
     color: var(--primary);
     font-size: 1.5rem;
+}
+
+.small-category {
+    font-weight: normal;
+    color: gray;
 }
