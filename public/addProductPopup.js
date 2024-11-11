@@ -26,10 +26,18 @@ function addProductPopup(element) {
 
                 <div class="buttons">
                     <button type="submit"><span class="material-icons">check</span></button>
-                    <button id="close"><span class="material-icons">close</span></button>
+                    <button type="button" id="close" onclick="closePopup()"><span class="material-icons">close</span></button>
                 </div>
             </form>
         </div>
     `
     body.append(container);
 }
+
+function closePopup() {
+    const popup = document.querySelector(".popup-container");
+    document.body.removeChild(popup);
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.classList.remove('hide');
+}
+
