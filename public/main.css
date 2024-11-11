@@ -5,7 +5,7 @@
 :root {
     --primary: #9addaf;
     --secondary: #35605A;
-    --error: #5f1525;
+    --error: #a72a45;
 }
 
 html {
@@ -239,7 +239,7 @@ button:has(span) {
 
 .delete {
     vertical-align: middle;
-    color: #F44336;
+    color: var(--error)
 }
 
 .table-footer {
@@ -309,8 +309,9 @@ button:has(span) {
     border: none;
     color: white;
     padding: 0.5rem;
-    border-radius: 50%;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .buttons button:hover {
@@ -321,7 +322,7 @@ button:has(span) {
     background-color: var(--error);
     color: white;
     background-color: rgba(0, 0, 0, inherit);
-    border-radius: 50%;
+    border-radius: 8px;
     cursor: pointer;
     vertical-align: middle;
 }
