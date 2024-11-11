@@ -38,9 +38,25 @@ async function addCategory({ name, description }) {
     }
 }
 
+async function deleteProduct(name) {
+    try {
+        const q = "DELETE FROM products WHERE products.name = ($1);";
+        await pool.query(q, [name]);
+    } catch (err) {
+        next(err);
+    }
+}
+
+async function deleteCategory(name) {
+    const q = "DELETE FROM categories WHERE categories.name = ($1);";
+    await pool.query(q, [name]);
+}
+
 module.exports = {
     getAllCategories,
     getAllProducts,
     addProduct,
-    addCategory
+    addCategory,
+    deleteProduct,
+    deleteCategory
 }
