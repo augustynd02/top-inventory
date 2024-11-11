@@ -183,6 +183,7 @@ button:has(span) {
     background-color: var(--primary);
     border-radius: 50%;
     transition: 1s ease;
+    margin-left: auto;
 }
 
 .add:hover {
@@ -235,6 +236,13 @@ footer.error {
 
 .popup-header h2 {
     margin: 0 0 2rem;
+    text-align: center;
+}
+
+.popup-header p {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
     text-align: center;
 }
 
