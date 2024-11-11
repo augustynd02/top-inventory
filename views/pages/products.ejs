@@ -11,6 +11,7 @@
     />
     <script src="addProductPopup.js" defer></script>
     <script src="deletePopup.js" defer></script>
+    <script src="editProductPopup.js" defer></script>
   </head>
 
   <body>
@@ -32,7 +33,7 @@
               </div>
               <div class="down">
                 <span class="description"> <%= product.description %> </span>
-                <button class="edit"><span class="material-icons">edit</span></button>
+                <button class="edit" onclick="editProductPopup(<%= JSON.stringify(product) %>)"><span class="material-icons">edit</span></button>
                 <button class="delete" onclick="deletePopup('products', '<%= product.name %>')"><span class="material-icons">delete</span></button>
               </div>
             </div>

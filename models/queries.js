@@ -52,11 +52,23 @@ async function deleteCategory(name) {
     await pool.query(q, [name]);
 }
 
+async function editProduct({ name, description, quantity, price }) {
+    const q = "UPDATE products SET description = $2, quantity = $3, price = $4 WHERE name = $1;"
+    await pool.query(q, [name, description, quantity, price]);
+}
+
+async function editCategory({ name, description }) {
+    const q = "UPDATE categories SET description = $2 WHERE name = $1;";
+    await pool.query(q, [name, description]);
+}
+
 module.exports = {
     getAllCategories,
     getAllProducts,
     addProduct,
     addCategory,
     deleteProduct,
-    deleteCategory
+    deleteCategory,
+    editProduct,
+    editCategory
 }

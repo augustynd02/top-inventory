@@ -326,3 +326,16 @@ button:has(span) {
     cursor: pointer;
     vertical-align: middle;
 }
+
+input:read-only {
+    background-color: var(--primary) !important;
+    color: white;
+    cursor: not-allowed;
+}
+
+.popup-header p {
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.5rem;
+}

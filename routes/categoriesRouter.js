@@ -8,4 +8,6 @@ categoriesRouter.post('/add', categoriesController.addCategory);
 
 categoriesRouter.post('/delete', categoriesController.deleteCategory);
 
+categoriesRouter.post('/edit', categoriesController.editCategory);
+
 module.exports = categoriesRouter;

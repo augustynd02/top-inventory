@@ -16,6 +16,14 @@ const categoriesController = {
         } catch (err) {
             next(err);
         }
+    },
+    editCategory: async (req, res, next) => {
+        try {
+            await db.editCategory(req.body);
+            res.redirect('/categories');
+        } catch (err) {
+            next(err);
+        }
     }
 }
 

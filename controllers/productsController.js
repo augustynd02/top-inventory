@@ -12,6 +12,14 @@ const productsController = {
     deleteProduct: async (req, res) => {
         await db.deleteProduct(req.body.name);
         res.redirect('/products');
+    },
+    editProduct: async (req, res, next) => {
+        try {
+            await db.editProduct(req.body);
+            res.redirect('/products')
+        } catch(err) {
+            next(err);
+        }
     }
 }
 
