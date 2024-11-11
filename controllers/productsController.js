@@ -3,7 +3,8 @@ const db = require('../models/queries');
 const productsController = {
     getProducts: async (req, res) => {
         const products = await db.getAllProducts();
-        res.render('pages/products', { products: products });
+        const categories = await db.getAllCategories();
+        res.render('pages/products', { products: products, categories: categories });
     },
     addProduct: async (req, res) => {
         await db.addProduct(req.body)

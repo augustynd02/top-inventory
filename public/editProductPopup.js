@@ -1,4 +1,4 @@
-function editProductPopup(product) {
+function editProductPopup(product, categories) {
     const body = document.querySelector('body');
     const wrapper = document.querySelector('.wrapper');
     wrapper.classList.add('hide');
@@ -6,7 +6,13 @@ function editProductPopup(product) {
     const container = document.createElement('div');
     container.classList.add('popup-container');
 
-    // TODO: category input to a selection
+    const categoriesNodes = [];
+    categories.forEach(category => {
+        categoriesNodes.push(`<option value="${category.name}">${category.name}</option>`);
+    });
+
+    const optionsHTML = categoriesNodes.join('');
+
     container.innerHTML = `
         <div class="popup-header">
             <h2>Edit product</h2>
@@ -22,7 +28,9 @@ function editProductPopup(product) {
                 <label for="price">Price</label>
                 <input type="number" name="price" id="price" value="${product.price}">
                 <label for="category">Category</label>
-                <input type="text" name="category" id="category" value="${product.category}">
+                <select name="category" id="category">
+                    ${optionsHTML}
+                </select>
 
                 <div class="buttons">
                     <button type="submit"><span class="material-icons">check</span></button>

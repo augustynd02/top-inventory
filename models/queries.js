@@ -20,13 +20,12 @@ async function getAllProducts() {
     }
 }
 
-async function addProduct({ name, description, quantity, price }) {
-    try {
-        const q = "INSERT INTO products (name, description, quantity, price, category_id) VALUES ($1, $2, $3, $4, 1);";
-        await pool.query(q, [name, description, quantity, price]);
-    } catch (err) {
-        next(err);
-    }
+async function addProduct({ name, description, quantity, price, category }) {
+        const q = `
+        INSERT INTO products (name, description, quantity, price, category_id)
+        VALUES ($1, $2, $3, $4, (SELECT id FROM categories WHERE categories.name = $5));
+        `;
+        await pool.query(q, [name, description, quantity, price, category]);
 }
 
 async function addCategory({ name, description }) {

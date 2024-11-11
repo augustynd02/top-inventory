@@ -33,14 +33,14 @@
               </div>
               <div class="down">
                 <span class="description"> <%= product.description %> </span>
-                <button class="edit" onclick="editProductPopup(<%= JSON.stringify(product) %>)"><span class="material-icons">edit</span></button>
+                <button class="edit" onclick="editProductPopup(<%= JSON.stringify(product) %>, <%= JSON.stringify(categories) %>)"><span class="material-icons">edit</span></button>
                 <button class="delete" onclick="deletePopup('products', '<%= product.name %>')"><span class="material-icons">delete</span></button>
               </div>
             </div>
             <% }); %>
           </div>
           <div class="table-footer">
-            <button class="add" id="add-product" onClick="addProductPopup()"><span class="material-icons">add</span></button>
+            <button class="add" id="add-product" onClick="addProductPopup(<%= JSON.stringify(categories) %>)"><span class="material-icons">add</span></button>
           </div>
         </div>
       </main>
