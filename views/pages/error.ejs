@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <%- include('../partials/navbar') %>
-
-    <main>
-        <h1>Error: <%= status %></h1>
-        <p>The serves has encountered an error:</p>
-        <p><%= message %></p>
-    </main>
-
-    <%- include('../partials/footer', { error: true }) %>
+    <div class="wrapper">
+        <%- include('../partials/navbar') %>
+        <main>
+            <h1>Error: <%= status %></h1>
+            <p>The serves has encountered an error:</p>
+            <p><%= message %></p>
+        </main>
+        <%- include('../partials/footer', { error: true }) %>
+    </div>
 </body>
 </html>

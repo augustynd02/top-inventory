@@ -12,36 +12,36 @@
   </head>
 
   <body>
-    <%- include('../partials/navbar') %>
-
-    <main>
-      <div class="table">
-        <div class="table-header">
-          <h1>Your products</h1>
-          <p>Hover for details</p>
-        </div>
-        <div class="table-content">
-          <% products.forEach(function(product) { %>
-          <div class="product">
-            <div class="top">
-              <span class="name"> <%= product.name %> </span>
-              <span class="quantity"> <%= product.quantity %>x </span>
-              <span class="price"> <%= product.price %>$ </span>
-            </div>
-            <div class="down">
-              <span class="description"> <%= product.description %> </span>
-              <button class="edit"><span class="material-icons">edit</span></button>
-              <button class="delete"><span class="material-icons">delete</span></button>
-            </div>
+    <div class="wrapper">
+      <%- include('../partials/navbar') %>
+      <main>
+        <div class="table">
+          <div class="table-header">
+            <h1>Your products</h1>
+            <p>Hover for details</p>
           </div>
-          <% }); %>
+          <div class="table-content">
+            <% products.forEach(function(product) { %>
+            <div class="product">
+              <div class="top">
+                <span class="name"> <%= product.name %> </span>
+                <span class="quantity"> <%= product.quantity %>x </span>
+                <span class="price"> <%= product.price %>$ </span>
+              </div>
+              <div class="down">
+                <span class="description"> <%= product.description %> </span>
+                <button class="edit"><span class="material-icons">edit</span></button>
+                <button class="delete"><span class="material-icons">delete</span></button>
+              </div>
+            </div>
+            <% }); %>
+          </div>
+          <div class="table-footer">
+            <button class="add" id="add-product"><span class="material-icons">add</span></button>
+          </div>
         </div>
-        <div class="table-footer">
-          <button class="add"><span class="material-icons">add</span></button>
-        </div>
-      </div>
-    </main>
-
-    <%- include('../partials/footer', { error: false }) %>
+      </main>
+      <%- include('../partials/footer', { error: false }) %>
+    </div>
   </body>
 </html>

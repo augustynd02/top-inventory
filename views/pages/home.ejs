@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <%- include('../partials/navbar') %>
-
-
-    <main>
-        <div class="header">
-            <h1>The best tool to manage your products. </br> Start your journey today.</h1>
-            <p>Easy. Quick. Handy. What else would you want? Go ahead and start your inventory! </p>
-        </div>
-        <div class="choices">
-            <a href="/categories">View categories</a>
-            <a href="/categories">View products</a>
-        </div>
-    </main>
-
-    <%- include('../partials/footer', { error: false }) %>
+    <div class="wrapper">
+        <%- include('../partials/navbar') %>
+        <main>
+            <div class="header">
+                <h1>The best tool to manage your products. </br> Start your journey today.</h1>
+                <p>Easy. Quick. Handy. What else would you want? Go ahead and start your inventory! </p>
+            </div>
+            <div class="choices">
+                <a href="/categories">View categories</a>
+                <a href="/categories">View products</a>
+            </div>
+        </main>
+        <%- include('../partials/footer', { error: false }) %>
+    </div>
 </body>
 </html>
