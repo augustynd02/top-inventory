@@ -45,6 +45,12 @@ async function editCategory({ name, description }) {
     await pool.query(q, [name, description]);
 }
 
+async function getTotalPrice() {
+    const q = `SELECT SUM(quantity * price) FROM products`;
+    const { rows } = await pool.query(q);
+    return rows[0].sum;
+}
+
 module.exports = {
     getAllCategories,
     getAllProducts,
@@ -53,5 +59,6 @@ module.exports = {
     deleteProduct,
     deleteCategory,
     editProduct,
-    editCategory
+    editCategory,
+    getTotalPrice
 }
