@@ -12,7 +12,7 @@ function addProductPopup(element) {
             <h2>Add product</h2>
         </div>
         <div class="popup-content">
-            <form action="product/add" method="POST">
+            <form action="products/add" method="POST">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name">
                 <label for="description">Description</label>
