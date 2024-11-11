@@ -10,12 +10,18 @@ const categoriesRouter = require('./routes/categoriesRouter');
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, "views"));
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/categories', categoriesRouter);
 
 app.get('/', (req, res) => res.send('works'));
+
+app.get('/errortest', (req, res, next) => {
+  const error = new Error("Test error");
+  next(error)
+})
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
