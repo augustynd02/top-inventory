@@ -16,8 +16,6 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/categories', categoriesRouter);
 
-app.get('/', (req, res) => res.send('works'));
-
 app.use((req, res, next) => {
   res.status(404);
   const error = new Error("Not found");
