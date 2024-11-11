@@ -20,7 +20,17 @@ async function getAllProducts() {
     }
 }
 
+async function addProduct({ name, description, quantity, price }) {
+    try {
+        const q = "INSERT INTO products (name, description, quantity, price, category_id) VALUES ($1, $2, $3, $4, 1)";
+        await pool.query(q, [name, description, quantity, price]);
+    } catch (err) {
+        next(err);
+    }
+}
+
 module.exports = {
     getAllCategories,
-    getAllProducts
+    getAllProducts,
+    addProduct
 }

@@ -4,6 +4,10 @@ const productsController = {
     getProducts: async (req, res) => {
         const products = await db.getAllProducts();
         res.render('pages/products', { products: products });
+    },
+    addProduct: async (req, res) => {
+        db.addProduct(req.body)
+        res.redirect('/products');
     }
 }
 
