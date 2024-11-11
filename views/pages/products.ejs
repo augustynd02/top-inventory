@@ -1,21 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products | Grocerio</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
     <%- include('../partials/navbar') %>
 
     <main>
-        <h1>Products</h1>
-        <% products.forEach(function(product) { %>
-            <p><%= JSON.stringify(product) %></p>
-        <% }); %>
+      <div class="table">
+        <div class="table-header">
+          <h1>Your products</h1>
+        </div>
+        <div class="table-content">
+          <% products.forEach(function(product) { %>
+          <div class="product">
+            <div class="top">
+              <span class="name"> <%= product.name %> </span>
+              <span class="quantity"> <%= product.quantity %>x </span>
+              <span class="price"> <%= product.price %>$ </span>
+            </div>
+            <div class="down">
+              <span class="description"> <%= product.description %> </span>
+              <button><span class="material-icons">edit</span></button>
+              <button><span class="material-icons">delete</span></button>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
     </main>
 
     <%- include('../partials/footer', { error: false }) %>
-</body>
+  </body>
 </html>
