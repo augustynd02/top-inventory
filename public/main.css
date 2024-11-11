@@ -151,6 +151,10 @@ footer.error {
     font-weight: bold;
 }
 
+.table {
+    width: 50%;
+}
+
 .table-content {
     display: flex;
     flex-direction: column;
@@ -159,7 +163,7 @@ footer.error {
 
 .product {
     text-align: left;
-    padding: 0rem 1rem;
+    padding: 0.5rem 1rem 0.5rem;
 
     border-left: 4px dashed var(--primary);
     /* border-bottom: 4px solid var(--primary); */
@@ -180,6 +184,15 @@ span.name {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+
+    height: 0;
+    interpolate-size: allow-keywords; /* allow for height animation */
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.product:hover > .down {
+    height: auto;
 }
 
 span.description {
