@@ -5,8 +5,8 @@ const productsController = {
         try {
             const products = await db.getAllProducts();
             const categories = await db.getAllCategories();
-            console.log(products);
-            console.log(categories);
+            const totalPrice = await db.getTotalPrice();
+            console.log(products, totalPrice);
             products.forEach(product => {
                 const id = product.category_id;
                 let categoryName = "";
@@ -16,9 +16,10 @@ const productsController = {
                         return;
                     }
                 })
-                product["category_name"] = categoryName;
+                product["category_name"] = categoryName ? categoryName : "Unknown";
+                product.description = product.description ? product.description : "No description provided";
             })
-            res.render('pages/products', { products: products, categories: categories });
+            res.render('pages/products', { products: products, categories: categories, total_price: totalPrice });
         } catch(err) {
             next(err);
         }
