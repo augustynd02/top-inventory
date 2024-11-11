@@ -311,13 +311,13 @@ input:read-only {
 }
 
 .header h1 {
-    font-size: 4rem;
+    font-size: clamp(2rem, 4vw, 4rem);
     font-weight: bold;
 }
 
 .header p {
     margin: 0px;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     font-weight: 100;
 }
 
@@ -352,3 +352,27 @@ input:read-only {
     color: var(--primary);
 }
 
+/* responsivity */
+
+@media (max-width: 970px) {
+    main {
+        width: 100%;
+    }
+
+    .table, .popup-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        margin-top: 5rem;
+    }
+    .choices {
+        flex-direction: column;
+    }
+
+    .table, .popup-container {
+        width: 95%;
+    }
+}
