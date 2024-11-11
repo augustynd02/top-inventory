@@ -17,6 +17,7 @@
         <div class="table">
             <div class="table-header">
                 <h1>Your categories</h1>
+                <p>Hover for details</p>
             </div>
             <div class="table-content">
                 <% categories.forEach(function(category) { %>
@@ -32,6 +33,9 @@
                     </div>
                 <% }); %>
             </div>
+            <div class="table-footer">
+                <button class="add"><span class="material-icons">add</span></button>
+              </div>
         </div>
     </main>
 
