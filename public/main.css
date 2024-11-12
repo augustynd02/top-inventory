@@ -95,6 +95,7 @@ nav a:hover {
     margin: 2rem;
     flex-grow: 1;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 16px;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -228,6 +229,7 @@ footer.error {
     padding: 2rem;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 16px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -350,6 +352,11 @@ input:read-only {
 .choices a:last-child {
     background-color: white;
     color: var(--primary);
+}
+
+.center {
+    display: grid;
+    place-items: center;
 }
 
 /* responsivity */
