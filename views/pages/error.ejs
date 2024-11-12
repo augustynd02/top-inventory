@@ -10,9 +10,13 @@
     <div class="wrapper">
         <%- include('../partials/navbar') %>
         <main>
-            <h1>Error: <%= status %></h1>
-            <p>The serves has encountered an error:</p>
-            <p><%= message %></p>
+            <div class="table center">
+                <div>
+                    <h1>Error: <%= status %></h1>
+                    <p>The serves has encountered an error:</p>
+                    <p><%= message %></p>
+                </div>
+            </div>
         </main>
         <%- include('../partials/footer', { error: true }) %>
     </div>
